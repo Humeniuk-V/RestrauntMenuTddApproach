@@ -75,9 +75,16 @@ namespace RestarauntMenu
             return DishesInOrder.Find(dishInOrder => dishInOrder.Id == dishId);
         }
 
-        public void RemoveDish(Dish dish)
+        public Dish RemoveDish(Dish dish)
         {
-            throw new NotImplementedException();
+            if (!CheckDishAvailability(dish))
+            {
+                return null;
+            }
+
+            DishesInOrder.Remove(dish);
+
+            return dish;
         }
     }
 }
