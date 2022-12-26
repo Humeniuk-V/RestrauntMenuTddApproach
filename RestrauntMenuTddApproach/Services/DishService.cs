@@ -86,5 +86,10 @@ namespace RestarauntMenu
 
             return dish;
         }
+
+        public void UpdateDish(int id, Dish expected)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
