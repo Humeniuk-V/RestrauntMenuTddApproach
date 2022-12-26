@@ -87,9 +87,18 @@ namespace RestarauntMenu
             return dish;
         }
 
-        public void UpdateDish(int id, Dish expected)
+        public Dish UpdateDish(int dishId, Dish dish)
         {
-            throw new NotImplementedException();
+            var dishFromOrder = FindDish(dishId);
+
+            if (dishFromOrder == null)
+            {
+                return null;
+            }
+
+            DishesInOrder[DishesInOrder.FindIndex(dishInOrder => dishInOrder.Id == dishId)] = dish;
+
+            return dishFromOrder;
         }
     }
 }
