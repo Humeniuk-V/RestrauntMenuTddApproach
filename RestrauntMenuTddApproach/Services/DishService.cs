@@ -106,5 +106,9 @@ namespace RestarauntMenu
             return dishFromOrder;
         }
 
+        public object UpdateVotesForDish(int id, int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

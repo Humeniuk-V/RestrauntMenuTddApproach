@@ -138,6 +138,47 @@ namespace UnitTests
 
             Assert.AreEqual(JsonConvert.SerializeObject(actual), JsonConvert.SerializeObject(expected));
         }
+        [TestMethod]
+        public void UpdateVotesForDish_DishObject_ReturnsObjectWith5Votes()
+        {
+            // Arrange
+            var expected = new Dish
+            {
+                Id = 1,
+                Name = "Salad1",
+                Cuisine = new CuisineType { Name = "American1" },
+                DishType = new DishType { Name = "Salad1" },
+                Ingredients = new List<DishIngredient> {
+                    new DishIngredient { Name = "Tomato" },
+                    new DishIngredient { Name = "Potato" },
+                    new DishIngredient { Name = "Salad" }
+                },
+                Price = 1000,
+                Votes = 5
+            };
 
+            var dish = new Dish
+            {
+                Id = 1,
+                Name = "Salad1",
+                Cuisine = new CuisineType { Name = "American1" },
+                DishType = new DishType { Name = "Salad1" },
+                Ingredients = new List<DishIngredient> {
+                    new DishIngredient { Name = "Tomato" },
+                    new DishIngredient { Name = "Potato" },
+                    new DishIngredient { Name = "Salad" }
+                },
+                Price = 1000,
+                Votes = 0
+            };
+            _dishService.AddDish(dish);
+
+
+            // Act
+            var actual = _dishService.UpdateVotesForDish(dish.Id, 5);
+
+            // Assert
+            Assert.AreEqual(expected.Votes, actual.Votes);
+        }
     }
 }
