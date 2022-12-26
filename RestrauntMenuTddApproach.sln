@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestrauntMenuTddApproach", "RestrauntMenuTddApproach\RestrauntMenuTddApproach.csproj", "{6C0BDC50-B7BE-45ED-92BE-F9904A6A058E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{478BA43A-7D9F-4EC7-B0D5-207560B8BD58}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C0BDC50-B7BE-45ED-92BE-F9904A6A058E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C0BDC50-B7BE-45ED-92BE-F9904A6A058E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C0BDC50-B7BE-45ED-92BE-F9904A6A058E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C0BDC50-B7BE-45ED-92BE-F9904A6A058E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{478BA43A-7D9F-4EC7-B0D5-207560B8BD58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{478BA43A-7D9F-4EC7-B0D5-207560B8BD58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{478BA43A-7D9F-4EC7-B0D5-207560B8BD58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{478BA43A-7D9F-4EC7-B0D5-207560B8BD58}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CF3A226-61CF-446C-A918-5FD12FAAC071}
+	EndGlobalSection
+EndGlobal
