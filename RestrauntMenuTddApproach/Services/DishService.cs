@@ -75,9 +75,9 @@ namespace RestarauntMenu
             return DishesInOrder.Find(dishInOrder => dishInOrder.Id == dishId);
         }
 
-        public object GetListOfDishesByPopularity()
+        public List<Dish> GetListOfDishesByPopularity()
         {
-            throw new NotImplementedException();
+            return DishesInOrder.OrderByDescending(dish => dish.Votes).ToList();
         }
 
         public Dish RemoveDish(Dish dish)
