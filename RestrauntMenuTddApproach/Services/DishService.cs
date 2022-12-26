@@ -75,6 +75,11 @@ namespace RestarauntMenu
             return DishesInOrder.Find(dishInOrder => dishInOrder.Id == dishId);
         }
 
+        public object GetListOfDishesByPopularity()
+        {
+            throw new NotImplementedException();
+        }
+
         public Dish RemoveDish(Dish dish)
         {
             if (!CheckDishAvailability(dish))
@@ -100,5 +105,6 @@ namespace RestarauntMenu
 
             return dishFromOrder;
         }
+
     }
 }
