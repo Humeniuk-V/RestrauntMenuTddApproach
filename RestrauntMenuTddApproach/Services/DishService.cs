@@ -106,9 +106,13 @@ namespace RestarauntMenu
             return dishFromOrder;
         }
 
-        public object UpdateVotesForDish(int id, int v)
+        public Dish UpdateVotesForDish(int dishId, int votesAmmount)
         {
-            throw new NotImplementedException();
+            var dishFromOrder = FindDish(dishId);
+
+            dishFromOrder.Votes += votesAmmount;
+
+            return dishFromOrder;
         }
     }
 }
