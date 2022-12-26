@@ -14,8 +14,7 @@ namespace UnitTests
         [TestMethod]
         public void AddDish_DishObject_ReturnTheSameDish()
         {
-            bool expected = true;
-            bool actual = _dishService.AddDish(new Dish
+            var expected = new Dish
             {
                 Id = 1,
                 Name = "Salad1",
@@ -28,8 +27,9 @@ namespace UnitTests
                 },
                 Price = 1000,
                 Votes = 0
-            });
+            };
 
+            var actual = _dishService.AddDish(expected);
 
             Assert.AreEqual(expected, actual);
         }

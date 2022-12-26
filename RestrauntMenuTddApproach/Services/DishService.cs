@@ -8,9 +8,71 @@ namespace RestarauntMenu
 {
     public sealed class DishService : IDishService
     {
-        public bool AddDish(Dish dish)
+        private readonly List<Dish> _dishesAvailable = new List<Dish> {
+            new Dish
+            {
+                Id = 1,
+                Name = "Salad1",
+                Cuisine = new CuisineType { Name = "American1" },
+                DishType = new DishType { Name = "Salad1" },
+                Ingredients = new List<DishIngredient> {
+                    new DishIngredient { Name = "Tomato" },
+                    new DishIngredient { Name = "Potato" },
+                    new DishIngredient { Name = "Salad" }
+                },
+                Price = 1000,
+                Votes = 0
+            },new Dish
+            {
+                Id = 2,
+                Name = "Salad2",
+                Cuisine = new CuisineType { Name = "American2" },
+                DishType = new DishType { Name = "Salad2" },
+                Ingredients = new List<DishIngredient> {
+                    new DishIngredient { Name = "Egg" },
+                    new DishIngredient { Name = "Potato" },
+                    new DishIngredient { Name = "Salad" }
+                },
+                Price = 2000,
+                Votes = 0
+            },new Dish
+            {
+                Id = 3,
+                Name = "Salad3",
+                Cuisine = new CuisineType { Name = "American3" },
+                DishType = new DishType { Name = "Salad3" },
+                Ingredients = new List<DishIngredient> {
+                    new DishIngredient { Name = "Tomato" },
+                    new DishIngredient { Name = "Potato" },
+                    new DishIngredient { Name = "Salad" }
+                },
+                Price = 3000,
+                Votes = 0
+            },
+        };
+
+        public List<Dish> DishesInOrder = new List<Dish>();
+
+        public Dish AddDish(Dish dish)
         {
-            return false;s
+            if (!CheckDishAvailability(dish))
+            {
+                return null;
+            }
+
+            DishesInOrder.Add(dish);
+
+            return FindDish(dish.Id);
+        }
+
+        public bool CheckDishAvailability(Dish dish)
+        {
+            return _dishesAvailable.Any(dishAvailable => dishAvailable.Equals(dish));
+        }
+
+        public Dish FindDish(int dishId)
+        {
+            return DishesInOrder.Find(dishInOrder => dishInOrder.Id == dishId);
         }
     }
 }
